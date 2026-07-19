@@ -1,85 +1,76 @@
-export interface Pudding {
-  id: number;
+export type PuddingRarity =
+  | "Common"
+  | "Rare"
+  | "Epic"
+  | "Legendary"
+  | "Cosmic";
+
+export type Pudding = {
+  id: string;
   name: string;
+  rarity: PuddingRarity;
+  element: string;
   flavor: string;
-  rarity: "Common" | "Rare" | "Epic" | "Legendary";
-  image: string;
   description: string;
-
-
-}
+  lore: string;
+  power: number;
+  image?: string;
+};
 
 export const puddings: Pudding[] = [
   {
-    id: 81,
+    id: "honeycomb",
     name: "Honeycomb Pudding",
-    flavor: "Golden Honey",
     rarity: "Common",
-    image: "/cards/honeycomb.png",
-    description:
-    "A cheerful pudding infused with warm golden honey harvested from cosmic bees.",
+    element: "Golden Nectar",
+    flavor: "Honey Crystal",
+    description: "A sweet cosmic pudding infused with ancient honey crystals.",
+    lore: "Created in the first dessert galaxy, Honeycomb Pudding represents discovery and growth.",
+    power: 120,
+    image: "/puddings/honeycomb.png",
   },
   {
-    id: 82,
+    id: "volcanic-magma",
     name: "Volcanic Magma Pudding",
+    rarity: "Rare",
+    element: "Fire",
     flavor: "Molten Chocolate",
-    rarity: "Legendary",
-    image: "/cards/volcanic.png",
-    description:
-    "A legendary pudding forged in volcanic magma with a molten chocolate core.",
+    description: "A molten pudding forged inside a cosmic volcano.",
+    lore: "Its core burns with energy from forgotten dessert planets.",
+    power: 280,
+    image: "/puddings/volcanic-magma.png",
   },
   {
-    id: 83,
-    name: "Frost Crystal Pudding",
-    flavor: "Ice Vanilla",
-    rarity: "Epic",
-    image: "/cards/frost.png",
-    description:
-    "An icy crystal pudding that glows beneath frozen constellations.",
-  },
-  {
-    id: 84,
-    name: "Cotton Candy Cloud Pudding",
-    flavor: "Rainbow Sugar",
-    rarity: "Rare",
-    image: "/cards/cloud.png",
-    description:
-    "A fluffy candy-cloud pudding drifting through rainbow nebulae.",
-  },
-  {
-    id: 85,
+    id: "bamboo-mochi",
     name: "Bamboo Mochi Pudding",
-    flavor: "Matcha Moon",
-    rarity: "Rare",
-    image: "/cards/bamboo.png",
-    description:
-    "A peaceful matcha pudding inspired by ancient bamboo forests on distant moons.",
-  },
-  {
-    id: 86,
-    name: "Galaxy Berry Pudding",
-    flavor: "Cosmic Fruit",
     rarity: "Epic",
-    image: "/cards/galaxy.png",
-    description:
-    "A vibrant berry pudding infused with cosmic fruit gathered across the galaxy.",
+    element: "Nature",
+    flavor: "Green Tea Mochi",
+    description: "A peaceful pudding guardian surrounded by bamboo forests.",
+    lore: "Ancient monks protected this recipe for thousands of years.",
+    power: 450,
+    image: "/puddings/bamboo-mochi.png",
   },
   {
-    id: 87,
-    name: "Nebula Vanilla Pudding",
-    flavor: "Stardust Cream",
-    rarity: "Common",
-    image: "/cards/nebula.png",
-    description:
-    "A smooth vanilla pudding infused with shimmering stardust from deep space.",
-  },
-  {
-    id: 88,
-    name: "Rainbow Universe Pudding",
-    flavor: "Infinite Candy",
+    id: "frost-crystal",
+    name: "Frost Crystal Pudding",
     rarity: "Legendary",
-    image: "/cards/rainbow.png",
-    description:
-    "The rarest pudding in existence, overflowing with every flavor in the universe.",
+    element: "Ice",
+    flavor: "Frozen Vanilla Crystal",
+    description: "A frozen crystal pudding from the edge of space.",
+    lore: "Only collectors with patience can discover this frozen treasure.",
+    power: 700,
+    image: "/puddings/frost-crystal.png",
+  },
+  {
+    id: "cotton-candy-cloud",
+    name: "Cotton Candy Cloud Pudding",
+    rarity: "Cosmic",
+    element: "Sky",
+    flavor: "Cosmic Sugar Cloud",
+    description: "A mythical pudding floating beyond the universe.",
+    lore: "The rarest pudding known across all cosmic dimensions.",
+    power: 999,
+    image: "/puddings/cotton-candy-cloud.png",
   },
 ];

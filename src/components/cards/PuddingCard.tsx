@@ -13,6 +13,7 @@ const rarityColors = {
   Rare: "bg-blue-600 text-white",
   Epic: "bg-purple-600 text-white",
   Legendary: "bg-amber-500 text-black",
+  Cosmic: "bg-pink-600 text-white",
 };
 
 export default function PuddingCard({
@@ -20,7 +21,7 @@ export default function PuddingCard({
 }: PuddingCardProps) {
   return (
     <Link href={`/puddings/${pudding.id}`}>
-      <Card className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/20">
+      <Card className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-2 hover:border-white/30">
         <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-purple-700 via-fuchsia-600 to-pink-500">
           {pudding.image ? (
             <Image
@@ -50,13 +51,23 @@ export default function PuddingCard({
             {pudding.flavor}
           </p>
 
-          <span
-            className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${
-              rarityColors[pudding.rarity]
-            }`}
-          >
-            {pudding.rarity}
-          </span>
+          <div className="flex items-center justify-between">
+            <span
+              className={`rounded-full px-3 py-1 text-xs font-bold ${
+                rarityColors[pudding.rarity]
+              }`}
+            >
+              {pudding.rarity}
+            </span>
+
+            <span className="text-sm text-white">
+              Power {pudding.power}
+            </span>
+          </div>
+
+          <p className="text-sm text-gray-400">
+            Element: {pudding.element}
+          </p>
         </div>
       </Card>
     </Link>
